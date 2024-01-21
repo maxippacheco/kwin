@@ -74,7 +74,7 @@ export const ChatContextProvider = ({fileId, children}: Props) => {
 
           let latestPage = newPages[0]!
 
-          latestPage.messages! = [
+          latestPage!.messages! = [
             {
               createdAt: new Date().toISOString(),
               id: crypto.randomUUID(),
