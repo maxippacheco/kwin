@@ -10,7 +10,6 @@ import { format } from "date-fns"
 import { trpc } from "@/app/_trpc/client"
 import UploadButton from "./UploadButton"
 import { Button } from "./ui/button";
-import { $Enums } from "@prisma/client";
 
 const Dashboard = () => {
 
@@ -58,7 +57,7 @@ const Dashboard = () => {
 										key: string;
 										id: string;
 										name: string;
-										uploadStatus: $Enums.UploadStatus;
+										uploadStatus: string;
 										url: string;
 										createdAt: string;
 										updatedAt: string;
@@ -67,7 +66,7 @@ const Dashboard = () => {
 										key: string;
 										id: string;
 										name: string;
-										uploadStatus: $Enums.UploadStatus;
+										uploadStatus: string;
 										url: string;
 										createdAt: string;
 										updatedAt: string;
