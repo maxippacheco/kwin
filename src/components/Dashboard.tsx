@@ -10,6 +10,7 @@ import { format } from "date-fns"
 import { trpc } from "@/app/_trpc/client"
 import UploadButton from "./UploadButton"
 import { Button } from "./ui/button";
+import { $Enums } from "@prisma/client";
 
 const Dashboard = () => {
 
@@ -52,7 +53,25 @@ const Dashboard = () => {
 					<ul className="mt-8 grid grid-cols-1 gap-6 divide-y divide-zin-200 md:grid-cols-2 lg:gird-cols-3">
 						{
 							files
-								.sort((a, b) => 
+								.sort((a: {
+										userId: string | null;
+										key: string;
+										id: string;
+										name: string;
+										uploadStatus: $Enums.UploadStatus;
+										url: string;
+										createdAt: string;
+										updatedAt: string;
+								}, b: {
+										userId: string | null;
+										key: string;
+										id: string;
+										name: string;
+										uploadStatus: $Enums.UploadStatus;
+										url: string;
+										createdAt: string;
+										updatedAt: string;
+								}) => 
 									new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 								)
 								.map( file => (
