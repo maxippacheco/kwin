@@ -1,9 +1,9 @@
+import { forwardRef } from 'react'
 import { cn } from '@/lib/utils'
 import { ExtendedMessage } from '@/types/message'
 import { Icons } from '../Icons'
 import ReactMarkdown from "react-markdown"
 import { format } from 'date-fns'
-import { forwardRef } from 'react'
 
 interface MessageProps {
 	message: ExtendedMessage
@@ -63,3 +63,5 @@ export const Message = forwardRef<HTMLDivElement, MessageProps>(({ message, isNe
 		</div>
 	)
 })
+
+Message.displayName = "Message"
