@@ -74,7 +74,15 @@ export const POST = async (req: NextRequest) => {
     take: 6,
   })
 
-  const formattedPrevMessages = prevMessages.map((msg) => ({
+  const formattedPrevMessages = prevMessages.map((msg: {
+    id: string;
+    text: string;
+    isUserMessage: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+    userId: string | null;
+    fileId: string | null;
+  }) => ({
     role: msg.isUserMessage
       ? ('user' as const)
       : ('assistant' as const),
