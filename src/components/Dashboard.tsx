@@ -73,7 +73,16 @@ const Dashboard = () => {
 								}) => 
 									new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 								)
-								.map( file => (
+								.map( (file: {
+										userId: string | null;
+										key: string;
+										id: string;
+										name: string;
+										uploadStatus: string;
+										url: string;
+										createdAt: string;
+										updatedAt: string;
+								}) => (
 									<li 
 										key={file.id}
 										className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow transition hover:shadow-lg"
