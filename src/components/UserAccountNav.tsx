@@ -70,7 +70,12 @@ export const UserAccountNav = async({ email, imageUrl, name }: Props) => {
 				<DropdownMenuSeparator />
 
 				<DropdownMenuItem className="cursor-pointer">
-					<LogoutLink>Log out</LogoutLink>
+					<Link
+						href="/sign-out" 
+						className="flex items-center w-full font-semibold"
+					>
+						Sign out
+					</Link>	
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 
