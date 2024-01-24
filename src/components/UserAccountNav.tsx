@@ -72,7 +72,7 @@ export const UserAccountNav = async({ email, imageUrl, name }: Props) => {
 				<DropdownMenuItem className="cursor-pointer">
 					<Link
 						href="/sign-out" 
-						className="flex items-center w-full font-semibold"
+						// className="flex items-center w-full font-semibold"
 					>
 						Sign out
 					</Link>	
