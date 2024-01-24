@@ -10,8 +10,13 @@ import { format } from "date-fns"
 import { trpc } from "@/app/_trpc/client"
 import UploadButton from "./UploadButton"
 import { Button } from "./ui/button";
+import { getUserSubscriptionPlan } from "@/lib/stripe";
 
-const Dashboard = () => {
+interface Props {
+	subscriptionPlan: Awaited<ReturnType<typeof getUserSubscriptionPlan>>
+}
+
+const Dashboard = ({ subscriptionPlan }: Props) => {
 
 	const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<string | null>(null)
 
@@ -42,7 +47,7 @@ const Dashboard = () => {
 					My Files
 				</h1>
 
-				<UploadButton />
+				<UploadButton isSubscribed={subscriptionPlan.isSubscribed} />
 			</div>
 
 			{/* display all user files */}
